@@ -98,8 +98,8 @@ export const projects = [
   },
   {
     id: 4,
-    title: "Animated Apple Iphone 3D Website",
-    des: "AI Chatbot your own AI friend",
+    title: "AI Chatbot your own AI friend",
+    des: "Your own AI friend help you with all your solutions",
     img: "/p4.svg",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
     link: "https://github.com/DS-Kushagra/Python-Project",

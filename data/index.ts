@@ -74,9 +74,9 @@ export const gridItems = [
 export const projects = [
   {
     id: 1,
-    title: "AI Voice Assistnt Project",
-    des: "Give it a task and enjoy the services it offers",
-    img: "/p1.svg",
+    title: "Voice Assistant Project",
+    des: "Give it a task and enjoy the services it offers to you",
+    img: "AI.png",
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
     link: "https://github.com/DS-Kushagra/Python-Project",
   },
@@ -100,7 +100,7 @@ export const projects = [
     id: 4,
     title: "AI Chatbot your own AI friend",
     des: "Your own AI friend help you with all your solutions",
-    img: "/p4.svg",
+    img: "Chat.png",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
     link: "https://github.com/DS-Kushagra/Python-Project",
   },
@@ -175,29 +175,29 @@ export const companies = [
 export const workExperience = [
   {
     id: 1,
-    title: "Frontend Engineer Intern",
-    desc: "Assisted in the development of a web-based platform using React.js, enhancing interactivity.",
+    title: "Data Science Intern",
+    desc: "Assisted in the analysing data and developing ML Models.",
     className: "md:col-span-2",
     thumbnail: "/exp1.svg",
   },
   {
     id: 2,
-    title: "Mobile App Dev - JSM Tech",
-    desc: "Designed and developed mobile app for both iOS & Android platforms using React Native.",
+    title: "Virtual Internships",
+    desc: "Virtually worked with the companies like Goldman Sachs, Accenture, TATA, PwC Switzerland and BCG GenAI.",
     className: "md:col-span-2", // change to md:col-span-2
     thumbnail: "/exp2.svg",
   },
   {
     id: 3,
-    title: "Freelance App Dev Project",
-    desc: "Led the dev of a mobile app for a client, from initial concept to deployment on app stores.",
+    title: "Real World Projects",
+    desc: "Worked on real world projects and enhanced my key skills for Data field.",
     className: "md:col-span-2", // change to md:col-span-2
     thumbnail: "/exp3.svg",
   },
   {
     id: 4,
-    title: "Lead Frontend Developer",
-    desc: "Developed and maintained user-facing features using modern frontend technologies.",
+    title: "Exploratory Data Analysis",
+    desc: "Cleaned up unstructured data and analyzed it with PowerBI Dashbords for useful insights.",
     className: "md:col-span-2",
     thumbnail: "/exp4.svg",
   },
@@ -220,4 +220,3 @@ export const socialMedia = [
     link: "https://www.linkedin.com/in/kushagra--agrawal",
   },
 ];
-

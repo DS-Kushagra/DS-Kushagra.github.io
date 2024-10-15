@@ -1,11 +1,16 @@
-import React from 'react'
-import { MagicButton } from './ui/MagicButton'
-import { FaLocationArrow } from 'react-icons/fa'
-import { socialMedia } from '@/data';
-import { profile } from 'console';
-import { link } from 'fs';
+"use client"; // Ensure this is at the top for client-side behavior
+
+import React from "react";
+import { MagicButton } from "./ui/MagicButton";
+import { FaLocationArrow } from "react-icons/fa";
+import { socialMedia } from "@/data";
 
 const Footer = () => {
+  // Function to handle button click and redirect to Topmate
+  const handleTopmateClick = () => {
+    window.open("https://topmate.io/kushagra_agrawal15", "_blank");
+  };
+
   return (
     <footer className="w-full pb-9 mb-[100px] md:mb-5" id="contact">
       <div className="flex flex-col items-center">
@@ -17,13 +22,13 @@ const Footer = () => {
           Reach out to me today and let's discuss how I can help you in giving
           perfect insights
         </p>
-        <a href="mailto:kushagraagrawal128@gmail.com">
+        <div onClick={handleTopmateClick}>
           <MagicButton
             title="Let's get in touch"
             icon={<FaLocationArrow />}
             position="right"
           />
-        </a>
+        </div>
       </div>
       <div className="flex mt-16 md:flex-row flex-col justify-between items-center">
         <p className="md:text-base text-sm md:font-normal font-light">
@@ -31,7 +36,7 @@ const Footer = () => {
         </p>
 
         <div className="flex items-center md:gap-3 gap-6">
-          {socialMedia.map((profile, link) => (
+          {socialMedia.map((profile) => (
             <a
               key={profile.id}
               href={profile.link}
@@ -51,6 +56,6 @@ const Footer = () => {
       </div>
     </footer>
   );
-}
+};
 
-export default Footer
+export default Footer;

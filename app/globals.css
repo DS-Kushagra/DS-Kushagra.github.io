@@ -89,3 +89,50 @@
     background: linear-gradient(90deg, #161a31 0%, #06091f 100%);
   }
 }
+@layer utilities {
+  .black-gradient {
+    background: linear-gradient(90deg, #161a31 0%, #06091f 100%);
+  }
+}
+/* Existing styles... */
+
+.skills-section {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem; /* Space between items */
+  justify-content: center;
+  padding: 2rem;
+}
+
+.skill-item {
+  background: white;
+  padding: 1.5rem; /* Padding around the icon */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px; /* Increased width */
+  height: 120px; /* Increased height */
+  transition: transform 0.3s ease;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.skill-item:hover {
+  transform: scale(1.1); /* Scale on hover */
+}
+
+.skill-item img {
+  max-width: 80%; /* Responsive icon size */
+  max-height: 80%; /* Responsive icon size */
+}
+
+.heading {
+  font-size: 2rem; /* Adjust heading size */
+  font-weight: bold;
+  margin-bottom: 1.5rem; /* Space below heading */
+}

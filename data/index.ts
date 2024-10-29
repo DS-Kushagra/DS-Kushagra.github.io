@@ -176,7 +176,7 @@ export const workExperience = [
   {
     id: 1,
     title: "Data Science Intern",
-    desc: "Assisted in the analysing data and developing ML Models.",
+    desc: "Assisted in analysing data and developing ML Models.",
     className: "md:col-span-2",
     thumbnail: "/exp1.svg",
   },

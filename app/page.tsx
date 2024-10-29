@@ -9,6 +9,8 @@ import { FloatingNav } from "@/components/ui/FloatingNav";
 import { navItems } from "@/data";
 import Image from "next/image";
 import { FaHome } from "react-icons/fa";
+import Skills from "@/components/Skills";
+
 
 export default function Home() {
   return (
@@ -17,11 +19,11 @@ export default function Home() {
     items-center flex-col mx-auto sm:px-10 px:5 overflow-clip"
     >
       <div className="max-w-6xl w-full">
-        <FloatingNav
-          navItems={navItems} />
+        <FloatingNav navItems={navItems} />
         <Hero />
         <Grid />
         <RecentProjects />
+        <Skills /> 
         <Clients />
         <Experience />
         <Approach />

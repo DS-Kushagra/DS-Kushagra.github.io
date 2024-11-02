@@ -10,7 +10,7 @@ import { navItems } from "@/data";
 import Image from "next/image";
 import { FaHome } from "react-icons/fa";
 import Skills from "@/components/Skills";
-
+import Publications from "@/components/Publications";
 
 export default function Home() {
   return (
@@ -26,6 +26,7 @@ export default function Home() {
         <Skills /> 
         <Clients />
         <Experience />
+        <Publications /> 
         <Approach />
         <Footer />
       </div>

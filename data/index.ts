@@ -4,7 +4,7 @@ export const navItems = [
   { name: "About", link: "#about" },
   { name: "Projects", link: "#projects" },
   { name: "Testimonials", link: "#testimonials" },
-  { name: "Contact", link: "#contact" },
+  { name: "Connect", link: "#contact" },
 ];
 
 export const gridItems = [
@@ -51,7 +51,7 @@ export const gridItems = [
 
   {
     id: 5,
-    title: "Currently learning Data Analysis",
+    title: "Currently learning ML Algorithms",
     description: "The Inside Scoop",
     className: "lg:col-span-1 lg:row-span-1 md:col-span-3 md:row-span-2",
     imgClassName: "w-full h-full opacity-30",

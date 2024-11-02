@@ -136,3 +136,78 @@
   font-weight: bold;
   margin-bottom: 1.5rem; /* Space below heading */
 }
+
+/* Publications Section */
+.publications-section {
+  background: inherit; /* Inherits the background from the parent */
+}
+
+
+.publication-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.publication-card {
+  border-radius: 12px;
+  background-color: #1f1f2e;
+  padding: 1.5rem;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Fade-in and slide-up animation */
+.publication-card.animate {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Ripple effect */
+.publication-card::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: rgba(255, 255, 255, 0.1);
+  transition: transform 0.4s ease;
+  transform: translate(-50%, -50%) scale(0);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.publication-card:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Scale, rotate, and glow effect on hover */
+.publication-card:hover {
+  transform: translateY(-5px) scale(1.05) rotate(1deg);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3), 0 0 15px rgba(100, 181, 246, 0.3);
+  background-color: #2a2a3e;
+}
+
+/* Text and spacing styles */
+.publication-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #e0e0e0;
+}
+
+.publication-card p {
+  color: #b0b3b8;
+}
+
+.publication-card span {
+  color: #a0a3ab;
+  font-size: 0.875rem;
+}
+
+.publications-section h2 {
+  color: #ffffff;
+}

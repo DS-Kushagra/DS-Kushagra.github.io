@@ -16,11 +16,11 @@ const Footer = () => {
       <div className="flex flex-col items-center">
         <h1 className="heading lg:max-w-[43vw]">
           Ready to take <span className="text-purple">your </span>digital
-          presence to the next level?
+          presence to the level?
         </h1>
         <p className="text-cyan-200 md:mt-10 my-5 text-center">
           Reach out to me today and let's discuss how I can help you in giving
-          perfect insights
+          perfect insights.
         </p>
         <div onClick={handleTopmateClick}>
           <MagicButton

@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const publications = [
   {
@@ -25,28 +25,30 @@ const publications = [
 ];
 
 const Publications = () => {
+  const cardsRef = useRef<HTMLAnchorElement[]>([]);
+  const [visibleCards, setVisibleCards] = useState<number[]>([]);
+
   useEffect(() => {
-    // Check if window is available
     if (typeof window !== "undefined") {
-      const cards = document.querySelectorAll(".publication-card");
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("animate");
+            const index = Number(entry.target.getAttribute("data-index"));
+            if (entry.isIntersecting && !visibleCards.includes(index)) {
+              setVisibleCards((prev) => [...prev, index]);
             }
           });
         },
         { threshold: 0.1 }
       );
 
-      cards.forEach((card) => {
-        observer.observe(card);
+      cardsRef.current.forEach((card) => {
+        if (card) observer.observe(card);
       });
 
       return () => observer.disconnect();
     }
-  }, []);
+  }, [visibleCards]);
 
   return (
     <section className="publications-section py-16 px-4 md:px-8 lg:px-16">
@@ -60,7 +62,15 @@ const Publications = () => {
             key={index}
             target="_blank"
             rel="noopener noreferrer"
-            className="publication-card bg-gray-800 text-white rounded-xl p-6 transition duration-300 ease-in-out"
+            className={`publication-card bg-gray-800 text-white rounded-xl p-6 transition-transform duration-500 ease-in-out ${
+              visibleCards.includes(index)
+                ? "transform scale-105 opacity-100"
+                : "opacity-0"
+            }`}
+            data-index={index}
+            ref={(el) => {
+              if (el) cardsRef.current[index] = el; // Safely assign the element
+            }}
           >
             <h3 className="text-xl font-semibold mb-2">{publication.title}</h3>
             <p className="text-gray-400 mb-4">{publication.description}</p>

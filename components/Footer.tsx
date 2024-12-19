@@ -8,7 +8,9 @@ import { socialMedia } from "@/data";
 const Footer = () => {
   // Function to handle button click and redirect to Topmate
   const handleTopmateClick = () => {
-    window.open("https://topmate.io/kushagra_agrawal15", "_blank");
+    if (typeof window !== "undefined") {
+      window.open("https://topmate.io/kushagra_agrawal15", "_blank");
+    }
   };
 
   return (

@@ -1,0 +1,253 @@
+/* src/index.css or styles/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 10% 3.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border !scroll-smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  button {
+    @apply active:outline-none;
+  }
+}
+
+@layer utilities {
+  .heading {
+    @apply font-bold text-4xl md:text-5xl text-center;
+  }
+
+  .black-gradient {
+    background: linear-gradient(90deg, #161a31 0%, #06091f 100%);
+  }
+}
+@layer utilities {
+  .black-gradient {
+    background: linear-gradient(90deg, #161a31 0%, #06091f 100%);
+  }
+}
+/* Existing styles... */
+
+.skills-section {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem; /* Space between items */
+  justify-content: center;
+  padding: 2rem;
+}
+
+.skill-item {
+  background: white;
+  padding: 1.5rem; /* Padding around the icon */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px; /* Increased width */
+  height: 120px; /* Increased height */
+  transition: transform 0.3s ease;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.skill-item:hover {
+  transform: scale(1.1); /* Scale on hover */
+}
+
+.skill-item img {
+  max-width: 80%; /* Responsive icon size */
+  max-height: 80%; /* Responsive icon size */
+}
+
+.heading {
+  font-size: 2rem; /* Adjust heading size */
+  font-weight: bold;
+  margin-bottom: 1.5rem; /* Space below heading */
+}
+
+/* Publications Section */
+.publications-section {
+  background: inherit; /* Inherits the background from the parent */
+}
+
+
+.publication-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.publication-card {
+  border-radius: 12px;
+  background-color: #1f1f2e;
+  padding: 1.5rem;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Fade-in and slide-up animation */
+.publication-card.animate {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Ripple effect */
+.publication-card::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: rgba(255, 255, 255, 0.1);
+  transition: transform 0.4s ease;
+  transform: translate(-50%, -50%) scale(0);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.publication-card:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Scale, rotate, and glow effect on hover */
+.publication-card:hover {
+  transform: translateY(-5px) scale(1.05) rotate(1deg);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3), 0 0 15px rgba(100, 181, 246, 0.3);
+  background-color: #2a2a3e;
+}
+
+/* Text and spacing styles */
+.publication-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #e0e0e0;
+}
+
+.publication-card p {
+  color: #b0b3b8;
+}
+
+.publication-card span {
+  color: #a0a3ab;
+  font-size: 0.875rem;
+}
+
+.publications-section h2 {
+  color: #ffffff;
+}
+
+/* animations.css */
+.fadeInUp {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.zoomIn {
+  opacity: 0;
+  transform: scale(0.8);
+  animation: zoomIn 0.6s forwards;
+}
+
+@keyframes zoomIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.fadeInLeft {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: fadeInLeft 0.6s forwards;
+}
+
+@keyframes fadeInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

@@ -44,7 +44,7 @@ export const BackgroundGradientAnimation: React.FC<
   const [isSafari, setIsSafari] = useState(false);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
+    if (typeof window !== "undefined" && document) {
       // Set CSS variables in the document's body only on the client-side
       document.body.style.setProperty(
         "--gradient-background-start",
